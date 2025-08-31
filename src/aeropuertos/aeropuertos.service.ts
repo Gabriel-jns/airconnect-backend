@@ -11,6 +11,7 @@ import { Aeropuerto } from 'src/entities/arepuerto.entity';
 export class AeropuertosService {
   aeropuertos: Aeropuerto[] = [
     new Aeropuerto(1, 'Aeropuerto1', 'ABC', 'Ciudad1'),
+    new Aeropuerto(2, 'Aeropuerto2', 'DEF', 'Ciudad2'),
   ];
 
   create(createAeropuertoDto: CreateAeropuertoDto): Aeropuerto {
