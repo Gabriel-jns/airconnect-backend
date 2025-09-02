@@ -7,5 +7,6 @@ import { AeropuertosModule } from 'src/aeropuertos/aeropuertos.module';
   controllers: [VuelosController],
   providers: [VuelosService],
   imports: [AeropuertosModule],
+  exports: [VuelosService],
 })
 export class VuelosModule {}

@@ -1,5 +1,4 @@
 import { Pasajero } from './pasajero.entity';
-import { Vuelo } from './vuelo.entity';
 
 export class Reserva {
   id: number;
@@ -7,7 +6,7 @@ export class Reserva {
   fechaReserva: Date;
   estado: string;
   pasajero: Pasajero;
-  vuelo: Vuelo;
+  vueloId: number;
 
   constructor(
     id: number,
@@ -15,13 +14,13 @@ export class Reserva {
     fechaReserva: Date,
     estado: string,
     pasajero: Pasajero,
-    vuelo: Vuelo,
+    vueloId: number,
   ) {
     this.id = id;
     this.codigoReserva = codigoReserva;
     this.fechaReserva = fechaReserva;
     this.estado = estado;
     this.pasajero = pasajero;
-    this.vuelo = vuelo;
+    this.vueloId = vueloId;
   }
 }
