@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AeropuertosModule } from './aeropuertos/aeropuertos.module';
 import { PasajerosModule } from './pasajeros/pasajeros.module';
 import { VuelosModule } from './vuelos/vuelos.module';
+import { ReservasModule } from './reservas/reservas.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -24,10 +25,14 @@ async function bootstrap() {
   const documentVuelos = SwaggerModule.createDocument(app, config, {
     include: [VuelosModule],
   });
+  const documentReservas = SwaggerModule.createDocument(app, config, {
+    include: [ReservasModule],
+  });
   SwaggerModule.setup('api', app, document);
   SwaggerModule.setup('api/aeropuertos', app, documentAeropuertos);
   SwaggerModule.setup('api/pasajeros', app, documentPasajeros);
   SwaggerModule.setup('api/vuelos', app, documentVuelos);
+  SwaggerModule.setup('api/reservas', app, documentReservas);
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
